@@ -9,3 +9,49 @@
 
   }
 }
+
+.stateLayout,.reducerLayout,.effectLayout,.contextLayout,.layout{
+  background-color: azure;
+  width: 80%;
+  border: 1px solid grey;
+  border-radius: 8px;
+  margin: 10px auto;
+  text-align: center;
+  padding: 10px;
+  > span{
+    font-weight: bold;
+    color: #605dfb;
+    display: block;
+    border-bottom: 1px solid grey;
+    margin: 0px 20px 20px 20px;
+    padding: 17px;
+    font-size: 27px;
+  }
+  .componentA{
+    span{
+      margin-right: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    button{
+      margin-right: 5px;
+    }
+    .componentB,.componentC,.componentD{
+      border: 1px solid grey;
+      border-radius: 10px;
+      width:50%;
+      margin: 10px auto;
+      text-align: center;
+      padding: 20px 0px;
+      display: block;
+      span{
+        margin-right: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      button{
+        margin-right: 5px;
+      }
+    }
+  }
+}

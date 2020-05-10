@@ -1,11 +1,9 @@
-/** An alternative to useState. Accepts a reducer of type (state, action) => newState, 
- *  and returns the current state paired with a dispatch method.
- *  It's basically used to handle component lable (local lable) state 
- * */
-
 import React, { useReducer } from 'react';
-
-
+import ComponentB from './ComponentB';
+import ComponentC from './ComponentC';
+import ComponentD from './ComponentD';
+// import '../../styles/main.scss';
+export const MyContext = React.createContext();
 const UseReducerExample = ({ }) => {
 
   /**
@@ -28,16 +26,18 @@ const UseReducerExample = ({ }) => {
     }
   };
 
-  const [counter, dispatch] = useReducer(reducer, initialState);
+  const [count, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <div className="reducerLayout">
-      <span>Use Reducer</span>
+    <div className="layout">
+      <span>Reducer With Context</span>
       <div className="componentA">
-        <span>{`Counter - ` + counter}</span>
-        <button type="button" class="btn btn-primary" onClick={() => dispatch('INCREMENT')}>INCREMENT</button>
-        <button type="button" class="btn btn-primary" onClick={() => dispatch('DECREMENT')}>DECREMENT</button>
-        <button type="button" class="btn btn-primary" onClick={() => dispatch('RESET')}>RESET</button>
+        <MyContext.Provider value={{ countState: count, countDispatch: dispatch }}>
+          <span>Component A Counter - {count}</span>
+          <ComponentB />
+          <ComponentC />
+          <ComponentD />
+        </MyContext.Provider>
       </div>
     </div>
   )

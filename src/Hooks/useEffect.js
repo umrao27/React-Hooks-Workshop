@@ -23,12 +23,15 @@ const UseEffectExample = ({ }) => {
   }, [])
 
   return (
-    <>
-      <div>{`useEffect Example Counter - ` + counter}</div>
-      <button onClick={handleIncrement}>INCREMENT</button>
-      <button onClick={handleDecrement}>DECREMENT</button>
-      <button onClick={handleReset}>RESET</button>
-    </>
+    <div className="effectLayout">
+      <span>Use Effect</span>
+      <div className="componentA">
+        <span>{`Counter - ` + counter}</span>
+        <button type="button" class="btn btn-primary" onClick={handleIncrement}>INCREMENT</button>
+        <button type="button" class="btn btn-primary" onClick={handleDecrement}>DECREMENT</button>
+        <button type="button" class="btn btn-primary" onClick={handleReset}>RESET</button>
+      </div>
+    </div>
   )
 }
 
